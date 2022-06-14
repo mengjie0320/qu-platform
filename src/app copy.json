@@ -1,0 +1,41 @@
+import React from "react";
+import { Route, Routes, Router } from 'react-router-dom';
+// Using Routes instead of Switch in react-router v6, 
+// exact is not supported in v6;
+import { RouteComponentProps, withRouter } from 'react-router';
+import routers from './routers';
+import './App.css';
+
+const xmlData = require('./foo.xml');
+console.log('xmlData.note.body', xmlData.note.body)
+
+const PageContent = () => {
+    return (
+        // <main className={`layout ${widthLimit ? 'layout-page-unlimit' : ''}`}>
+        <main>
+            <div className="layout-content">
+                <Routes>
+                    {routers.map(({ Component, page, path }) => (
+                        <Route path={page} key={page} element={<Component />} />
+                        // <Route key={page} path={page.toLowerCase()} >{ Component }</Route>
+                    ))}
+                    <Route path="*" key="notFound" element={<div className="container">not found</div>} />
+                </Routes>
+            </div>
+        </main>
+    );
+};
+
+const PageContentList = withRouter(connect(() => ({}), {})(PageContent));
+
+function App() {
+    return (
+        <Router history={currHistory}>
+          <Header />
+          <PageContentList />
+          <Footer />
+        </Router>
+    );
+} 
+
+export default App;

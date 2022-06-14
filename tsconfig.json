@@ -2,9 +2,10 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "es6",
+        // "module": "es6", // Dynamic imports are only supported when the 'module' flag is set to 'esnext'
+        "module": "esnext",
         "target": "es5",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "allowJs": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true, // Allow 'import x from y' when a module doesn't have a default export.

@@ -49,7 +49,10 @@ webSocketServer? }*/
                 //         loader: path.resolve('/src/loader/xml-loader.js')
                 //     }
                 // ]
-            }
+            }, {
+                test: /\.css?$/,
+                use: ['style-loader', 'css-loader'],
+            }, 
         ]
     },
     resolveLoader: {
