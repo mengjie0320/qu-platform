@@ -1,0 +1,13 @@
+.day {
+    border: 1px solid #f2f2f2;
+    flex: 1;
+}
+.day-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.day-body {
+    padding: 20px 10px;
+}
+.day-foot {}

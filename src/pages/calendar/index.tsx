@@ -1,5 +1,5 @@
 import React from 'react';
-import CalendarSection from '../../components/calendar-section';
+import CalendarSection from '../../components/calendar-section/index';
 class Calendar extends React.Component <any, any> {
     constructor(props: any) {
       super(props);
@@ -26,9 +26,23 @@ class Calendar extends React.Component <any, any> {
 
     render() {
         return (
-            this.state.calendarList.map((item: any, index: number) => {
-                return <CalendarSection eachCalendar={item} key={index}></CalendarSection>
-            })
+            <div>
+                <span>calendar</span>
+                {
+                    this.state.calendarList.map((item: any, index: number) => {
+                        if(index === 0 || (index + 1) % 7 === 0) {
+                            return <div className="each-weak" key={`eachweek${index}`}>
+                                <span>hhh</span>
+                                {
+                                    this.state.calendarList.slice(index, index+7).map((weakItem: any, weekIndex: number) => {
+                                        return <CalendarSection eachCalendar={weakItem} key={`${index}-${weekIndex}`}></CalendarSection>
+                                    })
+                                }
+                            </div>
+                        }
+                    })
+                }
+            </div>
         )
     }
 }

@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Calendar />}></Route>
           {/* <Route path="/about" element={<About />}></Route> */}
           <Route path="/squareGame" element={<SquareGame />}></Route>
           <Route path="/calendar" element={<Calendar />}></Route>
