@@ -52,7 +52,6 @@ root.render(
 // );
 
 
-// import { log } from './utils'
 // log("You didi it")
 // import { BrowserRouter as Router } from 'react-router-dom';
 // import React from "react"; // 必须有

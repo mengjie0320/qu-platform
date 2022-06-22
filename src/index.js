@@ -1,4 +1,4 @@
-import { log } from './utils'
+import { log } from './utils/log'
 log("You didi it")
 import React from "react"; // 必须有
 // import ReactDom from "react-dom";

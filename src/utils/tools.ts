@@ -1,6 +1,4 @@
 /* eslint-disable */
-import { decodeHtml } from '@tencent/imutils';
-import { LOCAL_DEFAULT_BUSS } from 'src/common/const';
 
 export const deepEqual = function (x: any, y: any) {
   if (x == y) {
@@ -145,20 +143,7 @@ export function enumValues<T>(t: T): ReadonlyArray<T[keyof T]> {
   return plainStringEnum ? values : values.filter((x) => typeof x !== 'string');
 }
 
-export function renderMsgTpl(str: string) {
-  return decodeHtml(str.replace(/<br>/g, '\n'));
-}
 
-// 业务id的列表，用于做区分java&node接口的白名单
-const defaultWhiteList = ['1', '2', '5', '171', '462', '163', '187', '285', '271', '363', '3', '906'];
-export function useJavaInterface() {
-  const currentBid = localStorage.getItem(LOCAL_DEFAULT_BUSS);
-  if (!currentBid) return false;
-  if (localStorage.getItem('IS_LOCAL')) {
-    return false;
-  }
-  return defaultWhiteList.includes(currentBid);
-}
 
 export const camelToLine = (obj: { [key: string]: any }): Object => {
   const newObj: { [key: string]: any } = {};

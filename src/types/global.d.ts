@@ -9,3 +9,7 @@ declare type PagePsp<T> = Resp<{
     list: T[];
     count: number;
   }>;
+
+declare interface Dictionary<T> {
+    [propName: string]: T;
+  }

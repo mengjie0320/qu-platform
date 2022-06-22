@@ -1,10 +1,9 @@
-
 // list列表 请求参数
 export type ListReq = {
     page: number,
     size: number,
-    start_time: string,
-    end_time: string,
+    startTime: string,
+    endTime: string,
 }
 
 export type CalendarDayList = {
@@ -20,3 +19,4 @@ export type Calendar = {
     dayList: Array<CalendarDayList>
 }
 
+  
